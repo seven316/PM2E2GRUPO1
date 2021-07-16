@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E2GRUPO1.AggUbicacion">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Padding="0" Margin="30, 30" WidthRequest="300" HeightRequest="350">
+                <Image x:Name="foto" Source="sample.jpg" Aspect="AspectFill"/>
+            </Frame>
+           
+            <StackLayout Padding="5">
+                <Label Text="Longitud Actual:"/>
+
+                <Entry x:Name="txtlongitud" IsReadOnly="True"/>
+                <Label Text="Latitud actual:"/>
+                <Entry x:Name="txtlatitud"  IsReadOnly="True"/>
+                <Entry x:Name="txtdescripcion" Placeholder="Descripcion" PlaceholderColor="Gray" />
+
+                <Button Text="GUARDAR UBICACION" x:Name="guardarUbicacion" Clicked="guardarUbicacion_Clicked"/>
+                <Button Text="VER LISTA" x:Name="verListaUbicaciones" Clicked="verListaUbicaciones_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
