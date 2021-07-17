@@ -6,7 +6,7 @@ namespace PM2E2GRUPO1
 {
     class Ubicacion
     {
-      
+        public string id { get; set; }
         public string lat { get; set; }
         public string lng { get; set; }
         public string descripcion { get; set; }

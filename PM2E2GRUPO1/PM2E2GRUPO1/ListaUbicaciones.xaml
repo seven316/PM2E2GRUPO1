@@ -1,17 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PM2E2GRUPO1.ListaUbicaciones">
-    <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="listaUbicaciones" ItemTapped="listaUbicaciones_ItemTapped">
+﻿<?xml version="1.0" encoding="utf-8" ?><ContentPage xmlns="http://xamarin.com/schemas/2014/forms"             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             x:Class="PM2E2GRUPO1.ListaUbicaciones">    <ContentPage.ToolbarItems>        <ToolbarItem Text="VER" Clicked="verItem_Clicked"></ToolbarItem>        <ToolbarItem Text="EDITAR"  Clicked="editarItem_Clicked"></ToolbarItem>        <ToolbarItem Text="BORRAR" Clicked="borrarItem_Clicked"></ToolbarItem>    </ContentPage.ToolbarItems>    <ContentPage.Content>        <StackLayout>            <Entry x:Name="txtDescripcion" Placeholder="Descripcion"/>            <ListView x:Name="listaUbicaciones" ItemSelected="listaUbicaciones_ItemTapped" >                <ListView.ItemTemplate>                    <DataTemplate>                        <TextCell Text="{Binding descripcion}"></TextCell>                    </DataTemplate>                </ListView.ItemTemplate>            </ListView>        </StackLayout>    </ContentPage.Content>
 
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding descripcion}"></TextCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        </StackLayout>
-    </ContentPage.Content>
 </ContentPage>

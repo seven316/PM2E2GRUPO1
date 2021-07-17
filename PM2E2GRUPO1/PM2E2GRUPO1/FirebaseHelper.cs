@@ -28,6 +28,7 @@ namespace PM2E2GRUPO1
                   .Child("Ubicacion")
                   .OnceAsync<Ubicacion>()).Select(item => new Ubicacion
                   {
+                      id = item.Key,
                       descripcion = item.Object.descripcion,
                       lat = item.Object.lat,
                       lng = item.Object.lng,
@@ -51,6 +52,31 @@ namespace PM2E2GRUPO1
               .Child("Ubicacion")
               .PostAsync(new Ubicacion() { descripcion = descripcion, lat = lat, lng = lng, foto = foto});
         }
+
+        public async Task DeletePerson(String personId)
+        {
+            var toDeletePerson = (await firebase
+              .Child("Ubicacion")
+              .OnceAsync<Ubicacion>()).Where(a => a.Key == personId).FirstOrDefault();
+            await firebase.Child("Ubicacion").Child(toDeletePerson.Key).DeleteAsync();
+
+        }
+
+
+        public async Task UpdatePerson(String personId, string Descripcion)
+        {
+            var toUpdatePerson = (await firebase
+              .Child("Ubicacion")
+              .OnceAsync<Ubicacion>()).Where(a => a.Key == personId).FirstOrDefault();
+
+            await firebase
+              .Child("Ubicacion")
+              .Child(toUpdatePerson.Key)
+              .PutAsync(new Ubicacion() { descripcion = Descripcion });
+        }
+
+
+
 
         public async Task<Ubicacion> GetPerson(String desc)
         {
